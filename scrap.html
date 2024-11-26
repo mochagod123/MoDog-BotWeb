@@ -1,0 +1,19 @@
+<script>
+    function Run() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", document.getElementById("url"));
+        xhr.send();
+        xhr.responseType = "text";
+        xhr.onload = () => {
+        if (xhr.status != 200) {
+            console.log("取得に失敗");
+        } else {
+            var pattern = /href=.+/;
+            var result = xhr.response.match(pattern);
+            console.log(result)
+        }
+        };
+    }
+</script>
+
+<input type="text" id="url"><button onclick="Run();">Go!</button>
