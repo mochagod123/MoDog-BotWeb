@@ -1,7 +1,7 @@
 <script>
     function Run() {
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", document.getElementById("url"));
+        xhr.open("GET", document.getElementById("url").value);
         xhr.send();
         xhr.responseType = "text";
         xhr.onload = () => {
